@@ -33,11 +33,11 @@ class CarCardSecondary extends StatelessWidget {
     final int rentalPrice = carData['rentalPrice'];
     final String carType = carData['carType'];
     final List<Map<String, dynamic>> gallery =
-    (carData['gallery'] as List<dynamic>).cast<Map<String, dynamic>>();
+        (carData['gallery'] as List<dynamic>).cast<Map<String, dynamic>>();
 
     // Get thumbnail image
     final Map<String, dynamic> thumbnailImage = gallery.firstWhere(
-          (img) => img['isThumbnail'] == true,
+      (img) => img['isThumbnail'] == true,
       orElse: () => gallery.first,
     );
 
@@ -136,7 +136,8 @@ class CarCardSecondary extends StatelessWidget {
                       if (isBookingCard && startDate != null && endDate != null)
                         Row(
                           children: [
-                            Icon(Icons.calendar_today, size: 14, color: AppStyles.textGrey),
+                            Icon(Icons.calendar_today,
+                                size: 14, color: AppStyles.textGrey),
                             const SizedBox(width: 4),
                             Text(
                               '$startDate to $endDate',
@@ -194,7 +195,7 @@ class CarCardSecondary extends StatelessWidget {
             ),
             // Action Buttons based on booking status
             Padding(
-              padding: const EdgeInsets.only(left: 15.0, right: 15, top: 10),
+              padding: const EdgeInsets.all(8.0),
               child: _buildActionButtons(context),
             ),
           ],
@@ -210,28 +211,27 @@ class CarCardSecondary extends StatelessWidget {
     IconData? icon,
     Color textColor = Colors.white,
   }) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: onPressed,
-        child: Container(
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          height: 30,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                text,
-                style: AppStyles.textStyle.copyWith(color: textColor, fontSize: 14),
-              ),
-              if (icon != null) ...[
-                const SizedBox(width: 8),
-                Icon(icon, color: textColor, size: 14),
-              ],
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        height: 30,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              text,
+              style: AppStyles.textStyle
+                  .copyWith(color: textColor, fontSize: 14),
+            ),
+            if (icon != null) ...[
+              const SizedBox(width: 8),
+              Icon(icon, color: textColor, size: 14),
             ],
-          ),
+          ],
         ),
       ),
     );
@@ -242,44 +242,48 @@ class CarCardSecondary extends StatelessWidget {
       case 'upcoming':
         return Row(
           children: [
-            _buildActionButton(
-              text: 'Cancel',
-              color: Colors.red,
-              onPressed: () async {
-                final result = await showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  backgroundColor: Colors.transparent,
-                  builder: (context) => CancelRideModalScreen(
-                    bookingId: carData['bookingId'],
-                    carName: carData['carName'],
-                  ),
-                );
+            Expanded(
+              child: _buildActionButton(
+                text: 'Cancel',
+                color: Colors.red,
+                onPressed: () async {
+                  final result = await showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    builder: (context) => CancelRideModalScreen(
+                      bookingId: carData['bookingId'],
+                      carName: carData['carName'],
+                    ),
+                  );
 
-                if (result != null) {
-                  print('Cancellation confirmed with reason: $result');
-                  // Todo: Implement actual cancellation logic here,
-                } else {
-                  print('Cancellation modal dismissed without confirmation.');
-                }
-              },
+                  if (result != null) {
+                    print('Cancellation confirmed with reason: $result');
+                    // Todo: Implement actual cancellation logic here,
+                  } else {
+                    print('Cancellation modal dismissed without confirmation.');
+                  }
+                },
+              ),
             ),
             const SizedBox(width: 10), // Space between buttons
-            _buildActionButton(
-              text: 'Reschedule',
-              color: Colors.green,
-              onPressed: () {
-                // Todo: Implement reschedule logic
-                print('Reschedule booking: ${carData['bookingId']}');
-                showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  backgroundColor: Colors.transparent,
-                  builder: (_) => BookNowModalScreen(
-                    carData: carData, // Pass relevant data for rescheduling
-                  ),
-                );
-              },
+            Expanded(
+              child: _buildActionButton(
+                text: 'Reschedule',
+                color: Colors.green,
+                onPressed: () {
+                  // Todo: Implement reschedule logic
+                  print('Reschedule booking: ${carData['bookingId']}');
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    builder: (_) => BookNowModalScreen(
+                      carData: carData, // Pass relevant data for rescheduling
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         );
@@ -320,7 +324,6 @@ class CarCardSecondary extends StatelessWidget {
           icon: Icons.arrow_forward_ios_rounded,
         );
       default:
-      // Default "Book Now" button for general car listings (not booking specific)
         return _buildActionButton(
           text: 'Book Now',
           color: AppStyles.primaryColor,
@@ -334,7 +337,7 @@ class CarCardSecondary extends StatelessWidget {
               ),
             );
           },
-          icon: Icons.arrow_forward_ios_rounded,
+          icon: AppIcons.arrowForward,
         );
     }
   }

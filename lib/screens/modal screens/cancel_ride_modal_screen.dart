@@ -154,7 +154,7 @@ class _CancelRideModalScreenState extends State<CancelRideModalScreen> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        color: AppStyles.primaryColor,
+                        color: AppStyles.cancelRed,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       height: 50,

@@ -78,7 +78,6 @@ class PaymentSummaryCard extends ConsumerWidget {
     );
   }
 
-  // Modified _buildRow: now directly formats the value
   Widget _buildRow(String label, double value,
       {bool isBold = false, bool isCurrency = false}) {
     final String formattedValue = isCurrency

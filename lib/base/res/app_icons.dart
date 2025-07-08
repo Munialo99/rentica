@@ -3,7 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AppIcons {
   // Navigation & General UI
-  static const IconData arrowBack = Icons.arrow_back_ios_new;
+  static const IconData arrowBack = Icons.arrow_back_ios_new_rounded;
+  static const IconData arrowForward = Icons.arrow_forward_ios_rounded;
   static const IconData edit = Icons.edit;
   static const IconData locationOn = Icons.location_on;
   static const IconData star = Icons.star;

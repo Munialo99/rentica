@@ -79,27 +79,16 @@ class PopularVehiclesScreen extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    // Trending Vehicles
-                    SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: popularCars.map((singleCar) {
-                          return GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(context, '/car_detail_screen', arguments: singleCar);
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.only(bottom: 15.0),
-                              child: CarCardSecondary(
-                                carData: singleCar,
-                                isFullWidth: true,
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                    ),
+                    // Popular Vehicles
+                    ...popularCars.map((singleCar) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 15.0),
+                        child: CarCardSecondary(
+                          carData: singleCar,
+                          isFullWidth: true,
+                        ),
+                      );
+                    }).toList(),
                     //  Vehicles Type
                     SizedBox(
                       height: 20,

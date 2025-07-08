@@ -8,7 +8,7 @@ import 'package:rentica/screens/chat/chat_screen.dart';
 import 'package:rentica/screens/home/screens/popular_vehicles_screen.dart';
 import 'package:rentica/screens/profile/profile_screen.dart';
 import 'package:rentica/screens/profile/screens/help_center_screen.dart';
-import 'package:rentica/screens/profile/screens/my_booking_screen.dart';
+import 'package:rentica/screens/booking/my_booking_screen.dart';
 import 'package:rentica/screens/profile/screens/payment_methods_screen.dart';
 import 'package:rentica/screens/profile/screens/privacy_policy_screen.dart';
 import 'package:rentica/screens/profile/screens/settings_screen.dart';

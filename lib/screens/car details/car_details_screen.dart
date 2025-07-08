@@ -117,10 +117,11 @@ class CarDetailsScreen extends StatelessWidget {
 
                   SizedBox(height: 20),
                   Container(
+                    width: double.infinity,
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: AppStyles.whiteColor,
-                      //borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
                       description,

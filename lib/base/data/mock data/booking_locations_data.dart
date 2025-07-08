@@ -1,7 +1,10 @@
 final List<String> kLocations = [
   'Nairobi CBD',
   'Westlands',
+  'Syokimau - SGR',
   'JKIA Airport',
   'Kilimani',
-  'Thika Road',
+  'Kitsuru',
+  'Thika Road Mall',
+  'Kahawa Wendani',
 ];
