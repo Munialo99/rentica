@@ -1,0 +1,15 @@
+final Map<String, dynamic> currentUserData = {
+  'userId': 'user_001',
+  'fullName': 'Kababa Kabuda',
+  'email': 'kababakabuda@example.com',
+  'phoneNumber': '+254712345678',
+  'profileImageUrl': 'https://img.freepik.com/free-photo/cartoon-style-character-wearing-headphones_23-2151056792.jpg',
+  'accountType': 'Premium Account',
+  'memberSince': '2023-01-15',
+  'location': 'Nairobi, Kenya',
+  'bio': 'Lover of cars and adventure!',
+  'totalTripsCompleted': 35,
+  'dob': '01/01/90',
+  'gender': 'Male',
+  'mpesaNumber': '254712345678',
+};
