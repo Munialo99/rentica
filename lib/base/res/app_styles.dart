@@ -41,11 +41,15 @@ class AppStyles{
 
   //Text styles
   static TextStyle textStyle = TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textBlack);
-  static TextStyle textStyle4 = TextStyle(fontSize: 16, color: textBlack);
-  static TextStyle textStyle3 = TextStyle(fontSize: 14, color: textBlack);
   static TextStyle textStyle2 = TextStyle(fontSize: 14, color: textGrey);
+  static TextStyle textStyle3 = TextStyle(fontSize: 14, color: textBlack);
+  static TextStyle textStyle4 = TextStyle(fontSize: 16, color: textBlack);
 
   static TextStyle headlineStyle1 = TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: textBlack);
   static TextStyle headlineStyle2 = TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: textBlack);
   static TextStyle headlineStyle3 = TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textBlack);
+
+  //Sign In Page
+  static TextStyle headlineStyle4 = TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: primaryColor);
+
 }

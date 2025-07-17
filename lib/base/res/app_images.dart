@@ -11,5 +11,8 @@ class AppImages {
   static const String appBarBackground =
       'https://img.freepik.com/free-photo/afroamerican-friends-leaning-car_23-2148422412.jpg';
 
+  static const String signInAppBarBackground =
+      'https://i.pinimg.com/736x/20/ee/5a/20ee5a3fd077dad74c99213449ab0c91.jpg';
+
 
 }

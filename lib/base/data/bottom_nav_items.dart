@@ -14,6 +14,8 @@ import 'package:rentica/screens/profile/screens/privacy_policy_screen.dart';
 import 'package:rentica/screens/profile/screens/settings_screen.dart';
 import 'package:rentica/screens/profile/screens/your_profile_screen.dart';
 import 'package:rentica/screens/home/screens/trending_vehicles_screen.dart';
+import 'package:rentica/screens/registration_screen.dart';
+import 'package:rentica/screens/sign_in_screen.dart';
 
 class BottomNavItem {
   final IconData icon;
@@ -47,10 +49,11 @@ final List<BottomNavItem> bottomNavItems = [
       '/': (context) => const HomeScreen(),
       '/trending_cars': (context) => const TrendingVehiclesScreen(),
       '/popular_vehicles_screen': (context) => const PopularVehiclesScreen(),
-      '/car_detail_screen': (context) => CarDetailsScreen(carData: ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
-      '/booking_summary_screen': (context) => BookingSummaryScreen(ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
-
-
+      '/car_detail_screen': (context) => CarDetailsScreen(
+          carData: ModalRoute.of(context)!.settings.arguments
+              as Map<String, dynamic>),
+      '/booking_summary_screen': (context) => BookingSummaryScreen(
+          ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
     },
   ),
   BottomNavItem(
@@ -60,9 +63,11 @@ final List<BottomNavItem> bottomNavItems = [
     initialRoute: '/',
     routes: {
       '/': (context) => const FavoriteScreen(),
-      '/car_detail_screen': (context) => CarDetailsScreen(carData: ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
-      '/booking_summary_screen': (context) => BookingSummaryScreen(ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
-
+      '/car_detail_screen': (context) => CarDetailsScreen(
+          carData: ModalRoute.of(context)!.settings.arguments
+              as Map<String, dynamic>),
+      '/booking_summary_screen': (context) => BookingSummaryScreen(
+          ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
     },
   ),
   BottomNavItem(
@@ -81,9 +86,11 @@ final List<BottomNavItem> bottomNavItems = [
     initialRoute: '/',
     routes: {
       '/': (context) => const MyBookingScreen(),
-      '/car_detail_screen': (context) => CarDetailsScreen(carData: ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
-      '/booking_summary_screen': (context) => BookingSummaryScreen(ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
-
+      '/car_detail_screen': (context) => CarDetailsScreen(
+          carData: ModalRoute.of(context)!.settings.arguments
+              as Map<String, dynamic>),
+      '/booking_summary_screen': (context) => BookingSummaryScreen(
+          ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
     },
   ),
   BottomNavItem(
@@ -99,9 +106,11 @@ final List<BottomNavItem> bottomNavItems = [
       '/help_center_screen': (context) => HelpCenterScreen(),
       '/privacy_policy_screen': (context) => PrivacyPolicyScreen(),
       '/my_bookings_screen': (context) => MyBookingScreen(),
-      '/car_detail_screen': (context) => CarDetailsScreen(carData: ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
-      '/booking_summary_screen': (context) => BookingSummaryScreen(ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
-
+      '/car_detail_screen': (context) => CarDetailsScreen(
+          carData: ModalRoute.of(context)!.settings.arguments
+              as Map<String, dynamic>),
+      '/booking_summary_screen': (context) => BookingSummaryScreen(
+          ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>),
     },
   ),
 ];

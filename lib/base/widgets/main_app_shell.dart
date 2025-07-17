@@ -15,7 +15,7 @@ class MainAppShell extends ConsumerWidget {
 
     return PopScope(
       canPop: false,
-      onPopInvoked: (didPop) async {
+      onPopInvokedWithResult: (didPop, result) async {
         if (didPop) {
           return;
         }
@@ -24,14 +24,10 @@ class MainAppShell extends ConsumerWidget {
         if (currentNavigatorKey.currentState?.canPop() == true) {
           currentNavigatorKey.currentState?.pop();
         } else {
-                    if (selectedIndex != 0) {
+          if (selectedIndex != 0) {
             ref.read(bottomNavIndexProvider.notifier).state = 0;
           } else {
-            if (Navigator.of(context).canPop()) {
-              Navigator.of(context).pop();
-            } else {
-              SystemNavigator.pop();
-            }
+            SystemNavigator.pop();
           }
         }
       },
@@ -40,6 +36,7 @@ class MainAppShell extends ConsumerWidget {
           index: selectedIndex,
           children: bottomNavItems.map((item) {
             return TabNavigator(
+              key: ValueKey(item.label),
               navigatorKey: item.navigatorKey,
               initialRoute: item.initialRoute,
               routes: item.routes,
@@ -50,7 +47,10 @@ class MainAppShell extends ConsumerWidget {
           currentIndex: selectedIndex,
           onTap: (index) {
             if (selectedIndex == index) {
-              bottomNavItems[index].navigatorKey.currentState?.popUntil((route) => route.isFirst);
+              bottomNavItems[index]
+                  .navigatorKey
+                  .currentState
+                  ?.popUntil((route) => route.isFirst);
             }
             ref.read(bottomNavIndexProvider.notifier).state = index;
           },
@@ -58,7 +58,8 @@ class MainAppShell extends ConsumerWidget {
           backgroundColor: AppStyles.whiteColor,
           selectedItemColor: AppStyles.primaryColor,
           unselectedItemColor: AppStyles.textGrey,
-          selectedLabelStyle: AppStyles.textStyle.copyWith(fontSize: 14.0, fontWeight: FontWeight.bold),
+          selectedLabelStyle: AppStyles.textStyle
+              .copyWith(fontSize: 14.0, fontWeight: FontWeight.bold),
           unselectedLabelStyle: AppStyles.textStyle.copyWith(fontSize: 14.0),
           items: bottomNavItems.map((item) {
             return BottomNavigationBarItem(

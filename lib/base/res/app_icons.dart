@@ -18,6 +18,7 @@ class AppIcons {
   static const IconData lockOutline = Icons.lock_outline;
   static const IconData personAddAlt = Icons.person_add_alt_1_outlined;
   static const IconData verifiedUser = Icons.verified_user;
+  static const IconData email = Icons.mail_outline_rounded;
 
   //Payment Method
   static const IconData phoneIcon = Icons.phone_android;
@@ -99,4 +100,9 @@ class AppIcons {
   static const IconData home = Icons.home_outlined;
   static const IconData favorite = Icons.favorite_border;
   static const IconData chat = Icons.chat_bubble_outline;
+
+  //Social Sign In
+  static const String googleLogo = 'https://img.icons8.com/color/48/000000/google-logo.png';
+  static const String appleLogo = 'https://img.icons8.com/ios-filled/50/000000/mac-os.png';
+
 }
